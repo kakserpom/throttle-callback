@@ -1,0 +1,25 @@
+{
+  "name": "throttle-callback",
+  "version": "1.0.3",
+  "description": "Throttle a callback",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "./node_modules/.bin/uvu tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kakserpom/throttle-callback.git"
+  },
+  "author": "Vasily Zorin <kak.serpom.po.yaitsam@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kakserpom/throttle-callback/issues"
+  },
+  "homepage": "https://github.com/kakserpom/throttle-callback",
+  "devDependencies": {
+    "uvu": "^0.5.1"
+  }
+}
