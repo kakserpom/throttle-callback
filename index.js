@@ -1,4 +1,4 @@
-const ThrottleCallback = (callback, ms) => {
+const throttleCallback = (callback, ms) => {
     let timeout
     let callArgs
     return (...args) => {
@@ -12,4 +12,4 @@ const ThrottleCallback = (callback, ms) => {
         }, ms || 1)
     }
 }
-module.exports = ThrottleCallback
+module.exports = throttleCallback
