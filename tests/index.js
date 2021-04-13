@@ -1,13 +1,12 @@
 const {test} = require('uvu');
 const assert = require('uvu/assert')
 
-const throttleCall = require('../misc/throttle-call')
+const throttleCallback = require('../index')
 
 test('basic', async () => {
 
-
     const promise = new Promise(((resolve, reject) => {
-        const callback = throttleCall(arg => {
+        const callback = throttleCallback(arg => {
             resolve(arg)
         }, 5)
         callback(1)
