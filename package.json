@@ -1,6 +1,6 @@
 {
   "name": "throttle-callback",
-  "version": "1.0.5",
+  "version": "1.1.0",
   "description": "Throttle a callback",
   "main": "index.js",
   "directories": {

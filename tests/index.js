@@ -5,18 +5,26 @@ const throttleCallback = require('../index')
 
 test('basic', async () => {
 
-    const promise = new Promise(((resolve, reject) => {
+    const promise = new Promise(resolve => {
+        const calls = []
         const callback = throttleCallback(arg => {
-            resolve(arg)
+            calls.push(arg)
+            if (calls.length === 3) {
+                resolve(calls)
+            }
+
         }, 5)
         callback(1)
+        callback(5)
         callback(2)
-        callback(3)
-    }))
+        setTimeout(() => {
+            callback(3)
+        }, 10)
+    })
+
 
     const result = await promise
-
-    assert.is(result, 3)
+    assert.equal(result, [1, 2, 3])
 })
 
 test.run()

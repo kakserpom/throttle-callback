@@ -2,13 +2,16 @@ const throttleCallback = (callback, ms) => {
     let timeout
     let callArgs
     return (...args) => {
-        callArgs = args
         if (timeout) {
+            callArgs = args
             return
         }
+        callback(...args)
         timeout = setTimeout(() => {
             timeout = null
-            callback(...callArgs)
+            if (callArgs) {
+                callback(...callArgs)
+            }
         }, ms || 1)
     }
 }
